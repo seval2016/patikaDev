@@ -1,0 +1,60 @@
+Proje 2: Merge Sort
+Dizi: [16, 21, 11, 8, 12, 22]
+
+Merge Sort Aşamaları:
+Merge Sort, bir "böl ve fethet" (divide and conquer) algoritmasıdır. Bu algoritma, verilen diziyi sürekli olarak ikiye böler ve her iki yarıyı sıraladıktan sonra birleştirir.
+
+Başlangıç:
+Dizi: [16, 21, 11, 8, 12, 22]
+
+Dizi ortadan ikiye bölünür:
+Sol yarı: [16, 21, 11]
+Sağ yarı: [8, 12, 22]
+İlk bölme:
+
+Sol yarıyı daha da bölelim:
+[16, 21, 11] → [16] ve [21, 11]
+Sağ yarıyı da bölelim:
+[8, 12, 22] → [8] ve [12, 22]
+İkinci bölme:
+
+[21, 11]'i ikiye bölelim:
+[21, 11] → [21] ve [11]
+[12, 22]'yi ikiye bölelim:
+[12, 22] → [12] ve [22]
+Birleştirme işlemi (Merge işlemi):
+
+Şimdi sıralı alt dizileri birleştirmeye başlıyoruz.
+
+Sol kısımdan birleştirme:
+
+[16] ve [21, 11]'i birleştirelim:
+21 ve 11'i sıralıyoruz: [11, 21]
+Şimdi [16] ve [11, 21]'i sıralıyoruz: [11, 16, 21]
+Sağ kısımdan birleştirme:
+
+[8] ve [12, 22]'yi birleştirelim:
+[8], [12] ve [22] zaten sıralıdır, dolayısıyla birleşmiş halde: [8, 12, 22]
+Son birleşim:
+
+Son olarak, sıralı iki yarıyı birleştiriyoruz: [11, 16, 21] ve [8, 12, 22]
+8 ile başlayarak sıralıyoruz: [8, 11, 12, 16, 21, 22]
+Sonuç:
+Sıralanmış dizi: [8, 11, 12, 16, 21, 22]
+Big-O Gösterimi:
+Merge Sort algoritması, her adımda diziyi ikiye böler ve her iki yarıyı sıraladıktan sonra birleştirir. Bunun sonucunda:
+
+Zaman karmaşıklığı (Time Complexity):
+Worst case: O(n log n)
+Best case: O(n log n) (Merge Sort her zaman aynı şekilde çalışır)
+Average case: O(n log n)
+Açıklama:
+
+Merge Sort, her seferinde diziyi ikiye böler. Bu bölme işlemi log(n) seviyesinde yapılır.
+Sonrasında her iki alt dizi birleştirilecektir, bu işlem n zaman alır.
+Bu yüzden toplamda O(n log n) zaman karmaşıklığına sahip olur.
+Uzay karmaşıklığı (Space Complexity):
+Merge Sort, geçici diziler kullandığı için ekstra bellek gerektirir. Bu nedenle, O(n) uzay karmaşıklığına sahiptir.
+Özet:
+Zaman karmaşıklığı: O(n log n)
+Uzay karmaşıklığı: O(n)
