@@ -23,7 +23,7 @@ const menu = [
     category: "Korea",
     price: 8.99,
     img:
-      "https://dwellbymichelle.com/wp-content/uploads/2020/05/DWELL-bibimbap.jpg",
+      "https://www.savingdessert.com/wp-content/uploads/2019/02/Dan-Dan-Noodles-10.jpg",
     desc: `Boiling vegetables, serving with special hot sauce`,
   },
   {
@@ -81,3 +81,88 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+const section = document.querySelector(".section-center");
+const btnContainer = document.querySelector('.btn-container');
+
+// This returns every category value but we don't need their duplicates
+const categories = menu.map((item) => item.category);
+// Removed duplicates of categories
+function removeDuplicates(data) {
+    return [...new Set(data)]
+}
+let cleanCategories = removeDuplicates(categories);
+// Since "All" is not a category we had to implement it manually
+cleanCategories.unshift("All");
+
+  // This function creates the buttons for the categories
+  function createBtns() {
+      cleanCategories.forEach((cleanCategories) => {
+      let btn = document.createElement("button");
+      btn.setAttribute("class", "btn btn-outline-dark btn-item");
+      btn.setAttribute("id", cleanCategories);
+      
+      btn.innerHTML = cleanCategories;
+      btn.setAttribute("data-id", cleanCategories);
+      btnContainer.appendChild(btn);
+      });
+  } createBtns();
+
+  // This function creates the menu items
+  function createMenuItems(menu) {
+      menu.forEach((item) => {
+      let menuItem = document.createElement("div");
+      menuItem.setAttribute("class", "menu-item col-6");
+      menuItem.setAttribute("data-id", item.id);
+      menuItem.innerHTML = `
+      <div class="menu-items">
+          <img
+            src=${item.img}
+            alt=${item.title}
+            class="photo"
+          />
+          <div class="menu-info">
+            <div class="menu-title">
+              <h4>${item.title}</h4>
+              <h4 class="price">${item.price}</h4>
+            </div>
+            <div class="menu-text">
+              ${item.desc}
+            </div>
+          </div>
+        </div>`
+      section.appendChild(menuItem);
+      });
+  }
+  createMenuItems(menu);
+  
+  // Functions to get categorized results on click
+  function Korean() {
+      document.getElementById('Korea').addEventListener("click", () => {
+          let korean = menu.filter((item) => item.category === "Korea");
+          section.innerHTML = "";
+          createMenuItems(korean);
+      });
+  } Korean();
+
+  function Japan() {
+      document.getElementById('Japan').addEventListener("click", () => {
+          let japanese = menu.filter((item) => item.category === "Japan");
+          section.innerHTML = "";
+          createMenuItems(japanese);
+      });
+  } Japan();
+
+  function China() {
+      document.getElementById('China').addEventListener("click", () => {
+          let chinese = menu.filter((item) => item.category === "China");
+          section.innerHTML = "";
+          createMenuItems(chinese);
+      });
+  } China();
+
+  function All() {
+    document.getElementById('All').addEventListener("click", () => {
+      createMenuItems(menu);
+    });
+  }  All();
