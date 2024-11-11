@@ -1,0 +1,51 @@
+Proje 1: Insertion Sort
+Dizi: [22, 27, 16, 2, 18, 6]
+
+Insertion Sort Aşamaları:
+İlk adım: İlk eleman zaten sıralı kabul edilir. Yani 22 yerinde kalır.
+
+[22, 27, 16, 2, 18, 6]
+İkinci adım: 27'yi sıralı dizinin içine yerleştiriyoruz. 27, 22'den büyük olduğu için herhangi bir değişiklik yapmaya gerek yoktur.
+
+[22, 27, 16, 2, 18, 6]
+Üçüncü adım: 16'yı sıralı dizinin içine yerleştiriyoruz. 16, 27 ve 22'den küçük olduğu için, bu iki sayıyı yer değiştirerek 16yı doğru konumuna yerleştiriyoruz.
+
+[16, 22, 27, 2, 18, 6]
+Dördüncü adım: 2'yi sıralı dizinin içine yerleştiriyoruz. 2, 16, 22 ve 27'den küçük olduğu için, tüm sayıları sağa kaydırarak 2yi başa alıyoruz.
+
+[2, 16, 22, 27, 18, 6]
+Beşinci adım: 18'i sıralı dizinin içine yerleştiriyoruz. 18, 27'den küçük olduğu için, 18'i 27nin önüne koyuyoruz.
+
+[2, 16, 18, 22, 27, 6]
+Altıncı adım: 6'yı sıralı dizinin içine yerleştiriyoruz. 6, 27, 22 ve 16'dan küçük olduğu için, bu sayıları sağa kaydırarak 6yı doğru konumuna yerleştiriyoruz.
+
+[2, 6, 16, 18, 22, 27]
+Big-O Gösterimi:
+
+Worst case (ters sıralı dizilerde): O(n²) (Çünkü her öğe için sıralı dizinin tüm elemanlarına bakılır.)
+Best case (zaten sıralı dizilerde): O(n) (Sadece sıralı olan dizide her öğe bir kez kontrol edilir.)
+Average case: O(n²) (Her durumda genellikle yarı yarıya sıralı olan dizilerde orta seviye karmaşıklık oluşur.)
+Time Complexity:
+Worst case (ters sıralı dizi): O(n²)
+Best case (zaten sıralı dizi): O(n)
+Average case: O(n²)
+18 Sayısı Hangi Duruma Girer?
+Worst case: Çünkü 18, dizinin sonlarına doğru gelmektedir ve sıralama işlemi sırasında dizinin sonuna kadar işlem yapılacaktır.
+
+
+Selection Sort Aşamaları
+Dizi: [7, 3, 5, 8, 2, 9, 4, 15, 6]
+
+Selection Sort Aşamaları:
+İlk adım: En küçük öğeyi buluyoruz. Bu durumda 2 en küçük olduğu için, 7 ile yer değiştiriyoruz.
+
+[2, 3, 5, 8, 7, 9, 4, 15, 6]
+İkinci adım: Geriye kalan elemanlar arasında en küçük öğe 3'tür. 3 zaten ilk konumda olduğu için değişiklik yapılmaz.
+
+[2, 3, 5, 8, 7, 9, 4, 15, 6]
+Üçüncü adım: Geriye kalan elemanlar arasında en küçük öğe 4'tür. 5 ile yer değiştiriyoruz.
+
+[2, 3, 4, 8, 7, 9, 5, 15, 6]
+Dördüncü adım: Geriye kalan elemanlar arasında en küçük öğe 5'tir. 8 ile yer değiştiriyoruz.
+
+[2, 3, 4, 5, 7, 9, 8, 15, 6]
