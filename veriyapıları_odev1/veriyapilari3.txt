@@ -1,0 +1,164 @@
+Proje 3: Binary Search Tree (BST) Aşamaları
+Verilen dizi: [7, 5, 1, 8, 3, 6, 0, 9, 4, 2]
+
+Binary Search Tree (BST) Aşamaları:
+Binary Search Tree (BST), her düğümün solundaki değerlerin daha küçük, sağındaki değerlerin ise daha büyük olduğu bir ağaç yapısıdır. Bu özellik, ağacın sıralı bir şekilde düzenlenmesini sağlar.
+
+Başlangıç:
+İlk eleman 7 ile başlıyoruz ve bu değeri kök (root) olarak alıyoruz.
+Adımlar:
+root = 7
+
+İlk eleman 7, BST'nin kökü olur.
+BST şu an:
+
+  7
+5'i ekleyelim:
+
+5'i eklerken:
+5 < 7, o yüzden 5 sol tarafta yer alacak.
+BST şu an:
+
+  7
+ /
+5
+1'i ekleyelim:
+
+1'i eklerken:
+1 < 7, sol tarafta.
+1 < 5, 5'in soluna yerleşecek.
+BST şu an:
+
+  7
+ /
+5
+/ 1
+
+
+8'i ekleyelim:
+
+8'i eklerken:
+8 > 7, sağ tarafa yerleşecek.
+BST şu an:
+
+  7
+ / \
+5   8
+/ 1
+
+
+3'ü ekleyelim:
+
+3'ü eklerken:
+3 < 7, sol tarafa.
+3 < 5, sol tarafa.
+3 > 1, 1'in sağ tarafına yerleşecek.
+BST şu an:
+
+  7
+ / \
+5   8
+/ 1
+3
+
+
+6'yı ekleyelim:
+
+6'yı eklerken:
+6 < 7, sol tarafa.
+6 > 5, sağ tarafa.
+BST şu an:
+
+  7
+ / \
+5   8
+/
+1 6
+3
+
+
+0'ı ekleyelim:
+
+0'ı eklerken:
+0 < 7, sol tarafa.
+0 < 5, sol tarafa.
+0 < 1, 1'in sol tarafına yerleşecek.
+BST şu an:
+
+  7
+ / \
+5   8
+/
+1 6 /
+0 3
+
+
+9'u ekleyelim:
+
+9'u eklerken:
+9 > 7, sağ tarafa.
+9 > 8, 8'in sağ tarafına yerleşecek.
+BST şu an:
+
+  7
+ / \
+5   8
+/ \
+1 6 9 /
+0 3
+
+
+4'ü ekleyelim:
+
+4'ü eklerken:
+4 < 7, sol tarafa.
+4 < 5, sol tarafa.
+4 > 1, sağ tarafa.
+4 > 3, 3'ün sağ tarafına yerleşecek.
+BST şu an:
+  7
+ / \
+5   8
+/ \
+1 6 9 /
+0 3
+4
+
+2'yi ekleyelim:
+
+2'yi eklerken:
+2 < 7, sol tarafa.
+2 < 5, sol tarafa.
+2 > 1, sağ tarafa.
+2 < 3, 3'ün sol tarafına yerleşecek.
+BST şu an:
+
+ 7
+/ \
+5 8 / \
+1 6 9 /
+0 3 /
+2 4
+
+
+Sonuç:
+Oluşturduğumuz Binary Search Tree (BST) şu şekildedir:
+
+       7
+      / \
+     5   8
+    / \    \
+   1   6    9
+  / \
+ 0   3
+    / \
+   2   4
+Özet:
+İlk eleman 7 olarak root alınır.
+Diğer sayılar sırasıyla BST'ye eklenir.
+Her ekleme işlemi, sayının mevcut kök ile karşılaştırılması ve uygun sol/sağ alt ağaçta yerleşmesiyle yapılır.
+
+
+
+
+
